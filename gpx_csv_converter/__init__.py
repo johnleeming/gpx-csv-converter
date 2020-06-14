@@ -67,7 +67,11 @@ class Converter:
             for selem in eheart_rate:
                 heart_rate=(selem.firstChild.data)
             
-            this_row = [timestamp, lat, lng, elevation, heart_rate]
+            ecadence=elem.getElementsByTagName(cad)
+            cadence=None
+            for selem in ecadencee:
+                cadence=(selem.firstChild.data)            
+            this_row = [timestamp, lat, lng, elevation, heart_rate, cadence]
             row_list.append(this_row)
 
         with open(output_file_name, "wb") as output_file:
